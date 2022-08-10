@@ -1,0 +1,75 @@
+<%- include("partials/header.ejs") -%>
+  
+<div class="main">
+    <h1 style="margin-top: 10px; margin-left: 20px;">New article</h1>
+    <div class="compose">
+        
+        <form action="/compose" method="POST" enctype="multipart/form-data">
+            <div>
+                <label for="title">Title</label>
+                <br>
+                <input type="text" id="title" placeholder="Title" 
+                       value="" name="title">
+            </div>
+            <div>
+                <label for="category">Category</label>
+                <br>
+                <input type="text" id="category" placeholder="Category" 
+                       value="" name="category" required>
+            </div>
+            <div>
+                <label for="body">Text</label>
+                <br>
+                <textarea id="summernote" name="body" value="" rows="12" cols="140"
+                          placeholder="body">
+                </textarea>
+                <script>
+                    $('#summernote').summernote();
+                </script>
+               
+            </div>
+            <div>
+                <label for="image">Upload image</label>
+                <input type="file" id="image" 
+                       name="image" value="" required>
+            </div>
+            <div>
+                <button type="submit">Upload</button>
+            </div>
+        </form>
+    </div>
+    <a href="/logout">Logout</a>
+  
+    <hr>
+  
+    <h1>All articles</h1>
+    <div class="exists_posts">
+
+        <% items.forEach(function(image) { %>
+        <article>
+                        
+            <img src="data:image/<%=image.img.contentType%>;base64,
+            <%=image.img.data.toString('base64')%>">
+            <h1><%= image.title.slice(0,100) %></h1>
+        <div class="commands">
+            <a href="articles/<%= image._id %>">Read article</a></p>
+            <a href="edit/<%= image._id %>">Edit</a>    
+        </div>         
+        </article>
+        <% }) %>
+            
+</div>
+
+<div class="navi">
+    <% for (let i=1; i<= totalPages; i++) { %>
+        <% if (i === 1) { %>
+            <a href="/"><%=i%></a>  
+        <% } else { %>
+            <a href="/<%=i%>"><%=i%></a>
+            <% } %>
+    <% } %>
+</div>
+
+
+<%- include("partials/footer.ejs") -%>
+  

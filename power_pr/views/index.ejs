@@ -1,0 +1,58 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="main">    
+    <div class="container">
+        <div class="quote">
+            <h1><%=q%></h1>
+            <p><%=a%></p>
+        
+        </div>
+    </div>
+   
+    <div class="wrapper">
+        
+        <div class="posts">
+                        
+                <% items.forEach(function(image) { %>
+                <article>
+                    
+                        <img src="data:image/<%=image.img.contentType%>;base64,
+                        <%=image.img.data.toString('base64')%>">
+                    
+                    <div class="description">
+                        <h1><a href="articles/<%= image._id %>"><%= image.title %></a></h1>
+                        
+                    </div>              
+                </article>
+                <% }) %>
+                    
+        </div>
+        <div class="categories">
+            <p>Categories</p> 
+                   
+
+            <% queryResult.forEach(function(item) { %>
+            <div class="category">   
+            <form method="post" action="/categories/<%=item%>">
+                
+                <button name="but" value="" type="submit"><%=item%></button>
+
+            </form>
+        </div>
+        <% }) %>
+        
+        </div>
+    </div>
+    <div class="navi">
+        <% for (let i=1; i<= totalPages; i++) { %>
+            <% if (i === 1) { %>
+                <a href="/"><%=i%></a>  
+            <% } else { %>
+                <a href="/page/<%=i%>"><%=i%></a>
+                <% } %>
+        <% } %>
+    </div>
+  
+</div>
+    
+<%- include("partials/footer.ejs") -%>

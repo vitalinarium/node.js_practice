@@ -1,0 +1,273 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Fira Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #fff;
+    color: rgb(77, 77, 77);
+}
+
+.main {
+
+    margin: 0 auto;
+    background: white;
+    padding-top: 80px;
+    
+
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 500px;
+    max-width: 1495px;
+    background-image: url("https://images.unsplash.com/photo-1530053969600-caed2596d242?crop=entropy&cs=tinysrgb&fm=jpg&ixlib=rb-1.2.1&q=80&raw_url=true&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+
+}
+
+.quote {
+    margin-top: 100px;
+    height: 200px;
+    justify-content: center;
+    color:black;
+
+}
+
+.quote h1,
+p {
+    text-align: center;
+}
+
+.compose {
+    margin-left: 50px;
+    display: flex;
+    justify-content:left;
+    height: 500px;
+    max-width: 1495px;
+  
+}
+
+.main h1 a {
+    text-decoration: none;
+    color:rgba(255, 101, 101, 0.438);
+}
+
+.exists_posts {
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: left;
+    
+}
+
+.exists_posts article{
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    width: 250px;
+    height: 350px;
+    
+}
+
+.exists_posts img{
+    align-self: center;
+    width: 200px;
+    height: 200px;
+    
+}
+
+.exists_posts h1{
+    font-size: 15px;
+    
+}
+
+.commands {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    
+    
+}
+
+.quotes {    
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;     
+    
+    
+}
+
+.quotes img {
+    margin: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-around;
+    max-width: 600px;
+    max-height: 500px;
+    
+}
+
+.posts {
+    width: 850px;
+    margin-left: 70px;
+    margin-right: 30px;
+    display:flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    
+    
+
+}
+
+.posts article {
+    display: block;
+    width: 380px;
+    
+    margin-bottom: 20px;
+    justify-content: space-between;
+    border-bottom: 1px solid rgb(134, 134, 134);
+    padding-bottom: 20px;
+    
+}
+.posts article a{
+    text-decoration: none;
+    color:rgb(70, 69, 69);
+}
+
+.posts article img {
+    width: 380px;
+    height: 330px;
+    object-fit: cover;   
+
+
+}
+
+.posts article .description {
+    padding: 60px 30px 30px 30px;
+    color: rgb(77, 77, 77);
+    
+
+
+}
+
+.posts article .description h1 {
+    font-size: 20px;
+    text-align: center;
+}
+
+
+
+.posts article:nth-child(even) img {
+    order: 1;
+    margin-right: 0;
+    
+}
+.navi {
+    display:flex;
+    justify-content: center;
+    padding-left: 50px;
+}
+.navi a {
+    margin: 5px;
+    padding: 8px;
+    align-self: center;
+    font-size: 25px;
+    text-decoration: none;
+    border: 2px solid grey;
+    border-radius: 50%;
+    color:black;
+    opacity: 0.8;
+}
+
+.navi :hover {
+    background-color: rgb(139, 145, 143);
+}
+
+
+
+footer {
+    margin-top: 30px;
+    background-color: rgb(11, 12, 14);
+    height: 50px;
+   
+}
+
+footer p {
+    margin-top: 10px;
+    color:#fff;
+    
+}
+
+@media (max-width: 765px){
+    .posts {
+        flex-direction: column;
+        align-items: center;
+        max-width: 765px;
+        width: 90%;
+    }
+
+    .posts article img {
+        max-width: 300px;
+        width:100%;
+        height: auto;
+        max-height: 300px;
+        flex-grow: 1;
+        align-items: center;
+    }
+
+    .posts article {
+        max-width: 760px;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+
+    }
+
+    .posts article:nth-child(even) img {
+        order: 0;
+        margin-right: 0;
+        
+    }
+
+    .posts article .description h1 {
+        font-size: 20px;
+        text-align: center;
+    }
+    
+    .posts article .description p {
+        font-size: 16px;
+        text-align:justify;
+    }
+
+    .container {
+        max-width: 760px;
+        height: auto;
+        width: 90%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .quote {
+        max-width: 768px;
+        width: 100%;
+        margin-top: 50px;
+        opacity: 0.6;
+    }
+
+    .quote h1{
+    background-color: bisque;
+    border-radius: 8px;
+    font-size: 26px;
+}
+    .quote p {
+    background-color: bisque;
+    border-radius: 8px;
+}
+
+}

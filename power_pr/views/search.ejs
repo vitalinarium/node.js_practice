@@ -1,0 +1,22 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="posts">
+        
+    <% if (queryResult.length !== 0) { %>            
+    <% queryResult.forEach(function(item) { %>
+    <article>
+        
+            <img src="data:image/<%=item.img.contentType%>;base64,
+            <%=item.img.data.toString('base64')%>">
+        
+        <div class="description">
+            <h1><%= item.title %></h1>
+            <h1><a href="/articles/<%= item._id %>"><%= item.title %></a></h1>
+        </div>              
+    </article>
+    <% }) %>
+    <% } else { %>   
+        <h1 style="margin-top: 50px;">Ooooops, can`t find your query:( Try something else.</h1>
+        
+    <% } %>
+</div>

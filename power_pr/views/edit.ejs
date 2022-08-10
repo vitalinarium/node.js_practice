@@ -1,0 +1,42 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="main">
+    <h1 style="margin-top: 10px; margin-left: 20px;">Edit article / <a href="/delete/<%=id%>">Delete article</a></h1>
+    
+    <div class="compose">
+    <form action="/edit/<%=id%>" method="POST" enctype="multipart/form-data">
+        <div>
+            <label for="title">Title</label>
+            <br>
+            <textarea id="title" name="title" rows="5" cols="140"><%=title%></textarea>
+        </div>
+        <div>
+            <label for="body">Тext</label>
+            <br>
+            <textarea id="body" name="body" rows="12" cols="140"><%=body%></textarea>
+            
+        </div>
+        <div>
+            <label for="category">Category</label>
+            <br>
+            <input type="text" id="category" value="<%=category%>" name="category">
+            
+        </div>
+        <div style="margin-top: 30px;">
+            <img src="data:image/<%=contentType%>;base64,
+                    <%=data.toString('base64')%>" width="300px" height="300px"> 
+        </div>
+        <div>
+            <label for="image">Upload image</label>
+            <br>
+            <input type="file" id="image" 
+                   name="image" value="">
+        </div>
+        <div>
+            <button style="margin-top: 30px; margin-bottom: 50px;" type="submit">Upload</button>
+        </div>
+    </form>
+    
+    </div>
+
+

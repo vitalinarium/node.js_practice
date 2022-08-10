@@ -1,0 +1,47 @@
+body {
+    background-color: black;
+    
+ 
+}
+
+.changed {
+    background-color: red;
+}
+
+h1 {
+    color:antiquewhite;
+    font-size: 40px;
+    text-align: center;
+}
+
+.main {
+    min-height: 500px;
+    min-width: 500px;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+
+button {
+    border: none;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 60px;
+    font-weight: bold;
+    margin: 4px 2px;
+    
+    background-color: yellow;
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    box-shadow: 3px 3px 3px 3px rgba(255, 218, 51, 0.973);
+
+
+}
+
+a {
+    color:azure;
+}

@@ -1,0 +1,17 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="main">
+    <div class="quotes">
+        
+        <% items.forEach(function(image) { %>
+            <% if (image.title.length === 0) { %>
+                              
+            <img src="data:image/<%=image.img.contentType%>;base64,
+            <%=image.img.data.toString('base64')%>">
+           <% } %>
+             
+        <% }) %>
+              
+    </div>
+
+</div>

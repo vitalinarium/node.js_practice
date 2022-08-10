@@ -1,0 +1,16 @@
+<%- include("partials/header.ejs") -%>
+
+<div class="article">
+    <img src="data:image/<%=contentType%>;base64,
+        <%=data.toString('base64')%>" width="300" height="300"> 
+    
+</div>
+<div class="descr">
+    <h2><%= title %></h2>
+    <p><%- body -%></p>
+</div>
+
+
+
+
+<%- include("partials/footer.ejs") -%>
